@@ -5,7 +5,7 @@ WORKDIR /go/src/xk6-harbor
 COPY go.mod go.sum ./
 RUN go mod download
 COPY . .
-RUN CGO_ENABLED=0 go build -a -installsuffix cgo -ldflags '-w' -i -o k6 ./cmd/k6/main.go
+RUN CGO_ENABLED=0 go build -a -installsuffix cgo -ldflags '-w' -o k6 ./cmd/k6/main.go
 
 
 FROM photon:3.0
